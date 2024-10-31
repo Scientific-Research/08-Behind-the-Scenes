@@ -32,3 +32,12 @@ const calcAge = birthYear => {
 calcAge(1991);
 // console.log(age); ERROR
 // console.log(printAge()); ERROR
+
+// variable hoisting:
+console.log(me); // undefined
+console.log(job); // Cannot access 'job' before initialization
+console.log(year); // Cannot access 'job' before initialization
+
+var me = 'Maximilian';
+let job = 'teacher';
+const year = 1980;
