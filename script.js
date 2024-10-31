@@ -122,3 +122,11 @@ const jonas = {
 };
 
 jonas.calcAge();
+
+/* Method barrowing: */
+const matilda = {
+  year: 2017,
+};
+
+matilda.calcAge = jonas.calcAge;
+matilda.calcAge(); // console.log(2037 - this.year); // 2037 - 2017 = 20
