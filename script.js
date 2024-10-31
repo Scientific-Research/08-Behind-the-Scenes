@@ -34,10 +34,33 @@ calcAge(1991);
 // console.log(printAge()); ERROR
 
 // variable hoisting:
-console.log(me); // undefined
-console.log(job); // Cannot access 'job' before initialization
-console.log(year); // Cannot access 'job' before initialization
+
+// console.log(me); // undefined
+// console.log(job); // Cannot access 'job' before initialization
+// console.log(year); // Cannot access 'job' before initialization
 
 var me = 'Maximilian';
 let job = 'teacher';
 const year = 1980;
+
+/* Functions hoisting */
+
+console.log(addDeclaration(2, 3)); // 5
+console.log(addExpression(2, 3)); // Cannot access 'addExpression' before initialization
+console.log(addArrow(2, 3)); // addArrow is not a function
+
+// 1. Declaration function
+function addDeclaration(a, b) {
+  return a + b;
+}
+
+// const a = 10;
+// 2. Expression function
+const addExpression = function (a, b) {
+  return a + b;
+};
+
+// 3. Arrow function
+var addArrow = () => {
+  return a + b;
+};
