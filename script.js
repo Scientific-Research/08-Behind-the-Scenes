@@ -50,6 +50,7 @@ const year = 1980;
 // console.log(addArrow(2, 3)); // addArrow is not a function
 
 // 1. Declaration function
+// In contrast to the other two types of functions, this below function is a hoisted function, that's why we can call it before the compiler read its content!
 function addDeclaration(a, b) {
   return a + b;
 }
@@ -72,9 +73,17 @@ if (!numProducts) deleteShoppingCart(); // numProducts is undefined and undefine
 
 var numProducts = 10;
 
+// In contrast to the other two types of functions, this below function is a hoisted function, that's why we can call it before the compiler read its content!
 function deleteShoppingCart() {
   console.log('All products deleted!');
 }
+
+/* 
+THREE EXTEREMLY IMPORTANT RULES TO WRITE A CLEAN CODE IN JS:
+1. DEFINE THE VARIABLES ALWAYS FIRST AT THE TOP OF THE PROGRAM!
+2. CALL THE FUNCTION ALWAYS AFTER IT WAS DEFINED => FOR ALL THREE ABOVE TYPES OF FUNCTIONS!
+3. USE ALWAYS CONST AND WHEN WE WANT TO CHANGE THE VARIABLE, USE THE LET AND TRY TO AVOID USING THE VAR BECAUSE OF THE PROLEMS IT CAUSES!
+*/
 
 /* Another example to compare the const, let and var together: */
 var x = 1;
