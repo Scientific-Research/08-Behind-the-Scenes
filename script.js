@@ -136,9 +136,10 @@ const f = jonas.calcAge;
 // console.log(f);
 // f(); it will not work!
 
+var firstName1 = 'Matilda';
 /* In Objekt: */
 const jonas2 = {
-  firstName: 'Maxi',
+  firstName1: 'Maxi',
   year: 1991,
   calcAge: function () {
     // console.log(jonas); OR
@@ -148,9 +149,14 @@ const jonas2 = {
   },
 
   greet: () => {
-    console.log(`Hey ${this.firstName}`);
+    console.log(this);
+    console.log(`Hey ${this.firstName1}`); // Hey Matilda because of var keyword
   },
 };
+
+// To avoid such problems:
+// 1. Never ever use the arrow function as method in an object!
+// 2. Never ever use the var keyword
 
 jonas2.greet();
 console.log(this.firstName);
