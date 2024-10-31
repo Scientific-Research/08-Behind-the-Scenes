@@ -75,3 +75,12 @@ var numProducts = 10;
 function deleteShoppingCart() {
   console.log('All products deleted!');
 }
+
+/* Another example to compare the const, let and var together: */
+var x = 1;
+let y = 2;
+const z = 3;
+
+console.log(window.x === x); /* true */
+console.log(window.y === y); /* false */
+console.log(window.z === z); /* false */
