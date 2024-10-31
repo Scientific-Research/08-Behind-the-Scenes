@@ -1,4 +1,5 @@
 'use strict';
+const firstName = 'Abbas';
 
 const calcAge = birthYear => {
   const age = 2037 - birthYear;
@@ -8,16 +9,17 @@ const calcAge = birthYear => {
     console.log(output);
 
     if (birthYear >= 1981 && birthYear <= 1996) {
-      const str = `Oh, and you're a millenial, ${firstName}`;
+      var yearIs2024 = true; // var is a function scope and not a block scope
+      const str = `Oh, and you're a millenial, ${firstName}`; // const or let is a block scope and not a function scope
       console.log(str);
     }
+    console.log(yearIs2024);
   };
 
   printAge();
   return age;
 };
 
-const firstName = 'Abbas';
 calcAge(1991);
 // console.log(age); ERROR
 // console.log(printAge()); ERROR
