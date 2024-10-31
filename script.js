@@ -136,7 +136,7 @@ const f = jonas.calcAge;
 // console.log(f);
 // f(); it will not work!
 
-var firstName1 = 'Matilda';
+// var firstName1 = 'Matilda';
 /* In Objekt: */
 const jonas2 = {
   firstName1: 'Maxi',
@@ -148,9 +148,11 @@ const jonas2 = {
     console.log(2037 - this.year); // 2037 - 1991 = 46
   },
 
-  greet: () => {
+  // greet: () => {
+  greet: function () {
     console.log(this);
     console.log(`Hey ${this.firstName1}`); // Hey Matilda because of var keyword
+    console.log(`Hey ${this.firstName1}`); // Hey Maxi without var keyword
   },
 };
 
@@ -159,4 +161,4 @@ const jonas2 = {
 // 2. Never ever use the var keyword
 
 jonas2.greet();
-console.log(this.firstName);
+// console.log(this.firstName);
