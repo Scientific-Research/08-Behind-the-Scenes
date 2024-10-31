@@ -93,3 +93,19 @@ const z = 3;
 console.log(window.x === x); /* true */
 console.log(window.y === y); /* false */
 console.log(window.z === z); /* false */
+
+console.log(this); // this is window object
+
+const calcAge1 = function (birthYear) {
+  console.log(2037 - birthYear);
+  console.log(this); // undefined
+};
+
+calcAge1(1991);
+
+const calcAgeArrow = birthYear => {
+  console.log(2037 - birthYear);
+  console.log(this); // window object
+};
+
+calcAgeArrow(1980);
