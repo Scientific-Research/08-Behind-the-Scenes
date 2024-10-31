@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 const firstName = 'Abbas';
 
 const calcAge = birthYear => {
@@ -12,6 +12,11 @@ const calcAge = birthYear => {
       var yearIs2024 = true; // var is a function scope and not a block scope
       const str = `Oh, and you're a millenial, ${firstName}`; // const or let is a block scope and not a function scope
       console.log(str);
+
+      const add = (a, b) => {
+        return a + b;
+      };
+      add(2, 3); // add should be called in if block, e.g. here, otherwise, we will get an error.
     }
     console.log(yearIs2024);
   };
