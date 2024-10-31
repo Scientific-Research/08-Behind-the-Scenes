@@ -109,3 +109,16 @@ const calcAgeArrow = birthYear => {
 };
 
 calcAgeArrow(1980);
+
+/* In Objekt: */
+const jonas = {
+  year: 1991,
+  calcAge: function () {
+    // console.log(jonas); OR
+    console.log(this);
+    console.log(2037 - year); // 2037 - 1980 = 57
+    console.log(2037 - this.year); // 2037 - 1991 = 46
+  },
+};
+
+jonas.calcAge();
