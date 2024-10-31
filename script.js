@@ -9,6 +9,7 @@ const calcAge = birthYear => {
     console.log(output);
 
     if (birthYear >= 1981 && birthYear <= 1996) {
+      const firstName = 'Stefan';
       var yearIs2024 = true; // var is a function scope and not a block scope
       const str = `Oh, and you're a millenial, ${firstName}`; // const or let is a block scope and not a function scope
       console.log(str);
