@@ -61,6 +61,6 @@ const addExpression = function (a, b) {
 };
 
 // 3. Arrow function
-var addArrow = () => {
+var addArrow = (a, b) => {
   return a + b;
 };
