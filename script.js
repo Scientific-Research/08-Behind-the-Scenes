@@ -45,9 +45,9 @@ const year = 1980;
 
 /* Functions hoisting */
 
-console.log(addDeclaration(2, 3)); // 5
-console.log(addExpression(2, 3)); // Cannot access 'addExpression' before initialization
-console.log(addArrow(2, 3)); // addArrow is not a function
+// console.log(addDeclaration(2, 3)); // 5
+// console.log(addExpression(2, 3)); // Cannot access 'addExpression' before initialization
+// console.log(addArrow(2, 3)); // addArrow is not a function
 
 // 1. Declaration function
 function addDeclaration(a, b) {
@@ -64,3 +64,14 @@ const addExpression = function (a, b) {
 var addArrow = (a, b) => {
   return a + b;
 };
+
+/* An example about the hoisting that can lead to the a big Problem when we use the var and Function Declaration: */
+
+console.log(numProducts);
+if (!numProducts) deleteShoppingCart(); // numProducts is undefined and undefined is a falsy value => a falsy value is a false value and in If statement it would be nagated and it would be true and all the shopping card would be deleted!
+
+var numProducts = 10;
+
+function deleteShoppingCart() {
+  console.log('All products deleted!');
+}
