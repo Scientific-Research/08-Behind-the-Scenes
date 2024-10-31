@@ -130,3 +130,8 @@ const matilda = {
 
 matilda.calcAge = jonas.calcAge;
 matilda.calcAge(); // console.log(2037 - this.year); // 2037 - 2017 = 20
+
+/* A function is a avlue => we can copy that to a const value too! */
+const f = jonas.calcAge;
+console.log(f);
+// f(); it will not work!
