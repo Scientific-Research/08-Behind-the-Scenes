@@ -162,3 +162,22 @@ const jonas2 = {
 
 jonas2.greet();
 // console.log(this.firstName);
+
+// arguments keyword
+const addExpr = function (a, b) {
+  console.log(arguments);
+  // Arguments(2) [2, 5, ...]
+  // Arguments(4) [2, 5, 8, 12, ...]
+  return a + b;
+};
+
+addExpr(2, 5);
+addExpr(2, 5, 8, 12);
+
+var addArrow = () => {
+  console.log(arguments); // arguments is not defined => arguments are not defined for arrow function and they are only defined for declaration function and expression function!
+  return a + b;
+};
+
+addArrow(2, 5);
+addArrow(2, 5, 8, 12);
