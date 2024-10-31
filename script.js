@@ -133,5 +133,24 @@ matilda.calcAge(); // console.log(2037 - this.year); // 2037 - 2017 = 20
 
 /* A function is a avlue => we can copy that to a const value too! */
 const f = jonas.calcAge;
-console.log(f);
+// console.log(f);
 // f(); it will not work!
+
+/* In Objekt: */
+const jonas2 = {
+  firstName: 'Maxi',
+  year: 1991,
+  calcAge: function () {
+    // console.log(jonas); OR
+    console.log(this);
+    console.log(2037 - year); // 2037 - 1980 = 57
+    console.log(2037 - this.year); // 2037 - 1991 = 46
+  },
+
+  greet: () => {
+    console.log(`Hey ${this.firstName}`);
+  },
+};
+
+jonas2.greet();
+console.log(this.firstName);
