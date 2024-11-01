@@ -246,7 +246,8 @@ const jessica = {
 // ERROR: Assignment to constant variable. we can change some property or methods inside the object, although it is constant(const). But when i want to assign a new value to the whole object like here, it will give me an error! BUT WHEN IT IS A LET VARIABLE, IT WILL WORK! SO, THERE IS DIFERENCE BETWEEN WHEN WE ASSIGN A NEW VALUE TO THE WHOLE OBJECT OR WHEN WE CHNAGE ONLY A PROPERTY IN THIS OBJECT!
 
 /* What is the solution: make a copy of jessica in anew variable using spread operator, BUT IT DOES ONLY A SURFACE COPY AND NOT A DEEP COPY*/
-const jessicaCopy = { ...jessica };
+// const jessicaCopy = { ...jessica }; // TO HAVE A SURFACE(ONE LAYER) CLONE(COPY) IN A NESTED OBJECT
+const jessicaCopy = structuredClone(jessica); // TO HAVE A DEEP CLONE(COPY) IN A NESTED OBJECT
 const Liz = jessicaCopy;
 Liz.firstName = 'Liz';
 Liz.age = 30;
@@ -257,7 +258,8 @@ console.log(jessica); // only the first object will be saved intact but the seco
 console.log(Liz);
 
 /* Or using the assign() function to do the same(Copy) for us: BUT IT DOES ONLY A SURFACE COPY AND NOT A DEEP COPY:*/
-const jessicaCopy2 = Object.assign({}, jessica);
+// const jessicaCopy2 = Object.assign({}, jessica); // TO HAVE A SURFACE(ONE LAYER) CLONE(COPY) IN A NESTED OBJECT
+const jessicaCopy2 = structuredClone(jessica); // TO HAVE A DEEP CLONE(COPY) IN A NESTED OBJECT
 const Liz2 = jessicaCopy2;
 Liz2.firstName = 'Liz2';
 Liz2.age = 30;
