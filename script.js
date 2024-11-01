@@ -175,7 +175,8 @@ addExpr(2, 5);
 addExpr(2, 5, 8, 12);
 
 var addArrow = () => {
-  console.log(arguments); // arguments is not defined => arguments are not defined for arrow function and they are only defined for declaration function and expression function!
+  // console.log(arguments);
+  // arguments is not defined => arguments are not defined for arrow function and they are only defined for declaration function and expression function!
   return a + b;
 };
 
