@@ -218,7 +218,18 @@ const jessica = {
   age: 27,
 };
 
-const Liz = jessica;
+// const Liz = jessica;
+// Liz.age = 30;
+// console.log(jessica);
+// console.log(Liz);
+
+// Liz = {};
+// ERROR: Assignment to constant variable. we can change some property or methods inside the object, although it is constant(const). But when i want to assign a new value to the whole object like here, it will give me an error! BUT WHEN IT IS A LET VARIABLE, IT WILL WORK! SO, THERE IS DIFERENCE BETWEEN WHEN WE ASSIGN A NEW VALUE TO THE WHOLE OBJECT OR WHEN WE CHNAGE ONLY A PROPERTY IN THIS OBJECT!
+
+/* What is the solution: make a copy of jessica in anew variable using spread operator*/
+const jessicaCopy = { ...jessica };
+const Liz = jessicaCopy;
+Liz.firstName = 'Liz';
 Liz.age = 30;
 console.log(jessica);
 console.log(Liz);
