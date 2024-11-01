@@ -203,3 +203,22 @@ friend.name = 'Abdol';
 
 console.log(me1); // name: 'Abdol', age: 27,
 console.log(friend); // name: 'Abdol', age: 27,
+
+/* Primitive values vs. Reference values in Practice */
+let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+
+console.log(lastName, oldLastName); // Davis Williams
+
+/* and now an Object: */
+const jessica = {
+  firstName: 'jessica',
+  lastName: 'Williams',
+  age: 27,
+};
+
+const Liz = jessica;
+Liz.age = 30;
+console.log(jessica);
+console.log(Liz);
