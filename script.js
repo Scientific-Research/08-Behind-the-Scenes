@@ -212,10 +212,28 @@ lastName = 'Davis';
 console.log(lastName, oldLastName); // Davis Williams
 
 /* and now an Object: */
+// const jessica = {
+//   firstName: 'jessica',
+//   lastName: 'Williams',
+//   age: 27,
+// };
+
 const jessica = {
   firstName: 'jessica',
   lastName: 'Williams',
   age: 27,
+  /* Comparing a nested object and a function(method) inside an object: */
+  // Abdoli: function () {
+  //   firstName = 'Lura';
+  //   lastName = 'Kamili';
+  //   age = 47;
+  // },
+  /* defining a new object inside jessica object: => a nested object */
+  friend: {
+    firstName: 'Laura',
+    lastName: 'Bulbuli',
+    age: 47,
+  },
 };
 
 // const Liz = jessica;
@@ -226,10 +244,20 @@ const jessica = {
 // Liz = {};
 // ERROR: Assignment to constant variable. we can change some property or methods inside the object, although it is constant(const). But when i want to assign a new value to the whole object like here, it will give me an error! BUT WHEN IT IS A LET VARIABLE, IT WILL WORK! SO, THERE IS DIFERENCE BETWEEN WHEN WE ASSIGN A NEW VALUE TO THE WHOLE OBJECT OR WHEN WE CHNAGE ONLY A PROPERTY IN THIS OBJECT!
 
-/* What is the solution: make a copy of jessica in anew variable using spread operator*/
+/* What is the solution: make a copy of jessica in anew variable using spread operator, BUT IT DOES ONLY A SURFACE COPY AND NOT A DEEP COPY*/
 const jessicaCopy = { ...jessica };
 const Liz = jessicaCopy;
 Liz.firstName = 'Liz';
 Liz.age = 30;
+Liz.friend.age = 75;
 console.log(jessica);
 console.log(Liz);
+
+/* Or using the assign() function to do the same(Copy) for us: BUT IT DOES ONLY A SURFACE COPY AND NOT A DEEP COPY:*/
+const jessicaCopy2 = Object.assign({}, jessica);
+const Liz2 = jessicaCopy2;
+Liz2.firstName = 'Liz';
+Liz2.age = 30;
+Liz.friend.age = 80;
+console.log(jessica);
+console.log(Liz2);
