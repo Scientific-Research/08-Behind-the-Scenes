@@ -234,6 +234,7 @@ const jessica = {
     lastName: 'Bulbuli',
     age: 47,
   },
+  family: ['Alice', 'Bob'], // array is an object too!
 };
 
 // const Liz = jessica;
@@ -250,14 +251,18 @@ const Liz = jessicaCopy;
 Liz.firstName = 'Liz';
 Liz.age = 30;
 Liz.friend.age = 75;
-console.log(jessica);
+Liz.family.push('Ghazanfar');
+Liz.family.push('Nosrat');
+console.log(jessica); // only the first object will be saved intact but the second and third nested objected will be affected and will be changed, that's why we have to look for another method to have a deep clone(copy) method!
 console.log(Liz);
 
 /* Or using the assign() function to do the same(Copy) for us: BUT IT DOES ONLY A SURFACE COPY AND NOT A DEEP COPY:*/
 const jessicaCopy2 = Object.assign({}, jessica);
 const Liz2 = jessicaCopy2;
-Liz2.firstName = 'Liz';
+Liz2.firstName = 'Liz2';
 Liz2.age = 30;
-Liz.friend.age = 80;
-console.log(jessica);
+Liz2.friend.age = 80;
+Liz2.family.push('Besmellah');
+Liz2.family.push('Ebram');
+console.log(jessica); // only the first object will be saved intact but the second and third nested objected will be affected and will be changed, that's why we have to look for another method to have a deep clone(copy) method!
 console.log(Liz2);
