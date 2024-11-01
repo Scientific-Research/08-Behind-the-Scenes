@@ -177,8 +177,29 @@ addExpr(2, 5, 8, 12);
 var addArrow = () => {
   // console.log(arguments);
   // arguments is not defined => arguments are not defined for arrow function and they are only defined for declaration function and expression function!
-  return a + b;
+  // return a + b;
 };
 
 addArrow(2, 5);
 addArrow(2, 5, 8, 12);
+
+/* Primitive types vs. Object(reference) Types */
+let age = 30;
+let oldAge = age;
+age = 31;
+
+console.log(age); // 31
+console.log(oldAge); // 30
+
+// const me = 10
+const me1 = {
+  name: 'Jonas',
+  age: 30,
+};
+
+const friend = me1;
+friend.age = 27;
+friend.name = 'Abdol';
+
+console.log(me1); // name: 'Abdol', age: 27,
+console.log(friend); // name: 'Abdol', age: 27,
